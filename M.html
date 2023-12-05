@@ -1,0 +1,205 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trucking Company</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+           background-image: radial-gradient( circle farthest-corner at 10% 20%, #222c5e 0%, #c8cbd5 90% );
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        nav {
+            background-image: linear-gradient( 109.6deg, #beab09 11.2%, #c0b65f 91.1% );
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            transition: color 2.5s;
+        }
+
+        nav a:hover {
+            background-image: radial-gradient( circle 804px at 12.1% 79.3%, rgba(186,236,251,1) 14.5%, rgba(217,159,251,1) 62.1%, rgba(240,187,249,1) 90% );
+        }
+
+        .menu-button {
+            display: none;
+            cursor: pointer;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .menu-button:hover {
+            background-color: #555;
+        }
+
+        section {
+            padding: 20px 0;
+            display: none; /* Hide sections by default */
+        }
+
+        .heading-box {
+            border: 2px solid #E06E5A;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .heading-box:hover {
+            border-color: #555;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <button class="menu-button" onclick="toggleMenu()">Menu</button>
+            <h1>Trucking Express</h1>
+            <p>The Truckers Corp.</p>
+        </div>
+    </header>
+
+    <nav>
+    <div class="container">
+        <ul>
+            <li class="tooltip"><a href="#home" onclick="showSection('home')">Home<span class="tooltiptext">Learn about our home services</span></a></li>
+            <li class="tooltip"><a href="#about" onclick="showSection('about')">About Us<span class="tooltiptext">Get to know us better</span></a></li>
+            <li class="tooltip"><a href="#services" onclick="showSection('services')">Services<span class="tooltiptext">Explore our services</span></a></li>
+            <li class="tooltip"><a href="#contact" onclick="showSection('contact')">Contact<span class="tooltiptext">Reach out to us</span></a></li>
+        </ul>
+    </div>
+</nav>
+
+    </nav>
+
+	<section id="home" class="container">
+        <div class="image-container">
+            <img src="C:\Users\Mj\Testing\Images\Truck 1.jpg" alt="Trucking Image 1"style="width: 1200px; height: 450px;">
+            
+        </div>
+    <sectio nid="home" class="container">
+        <div class="heading">
+
+            <h2>Welcome to Trucking Express</h2>
+            <p>We provide reliable and efficient transportation services to meet your logistical needs.</p>
+        </div>
+
+    </section>
+
+    <section id="about" class="container">
+        <div class="heading-box">
+            <h2>About Us</h2>
+            <p>Trucking Express is a leading transportation company with a commitment to excellence and customer satisfaction. With a fleet of modern vehicles and experienced drivers, we ensure timely and secure delivery of your goods.</p>
+        </div>
+    </section>
+
+    <section id="services" class="container">
+        <div class="heading-box">
+            <h2>Our Services</h2>
+            <ul>
+                <li>Long-Haul Trucking</li>
+                <li>Local Delivery</li>
+                <li>Freight Transportation</li>
+                <li>Custom Logistics Solutions</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <div class="heading-box">
+            <h2>Contact Us</h2>
+            <p>For inquiries and business partnerships, please reach out to us:</p>
+            <p>Email: truckin.express@example.com</p>
+            <p>Phone: 0911-208-9921</p>
+        </div>
+    </section>
+
+    <script>
+        function toggleMenu() {
+            var nav = document.querySelector('nav ul');
+            nav.style.display = nav.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function showSection(sectionId) {
+            // Hide all sections
+            var sections = document.querySelectorAll('section');
+            sections.forEach(function (section) {
+                section.style.display = 'none';
+            });
+
+            // Show the selected section
+            var selectedSection = document.getElementById(sectionId);
+            if (selectedSection) {
+                selectedSection.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
